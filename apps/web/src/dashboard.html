@@ -3,129 +3,109 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#111411" />
+    <meta name="description" content="Operate and inspect the ConvictionOS Alpaca paper options agent." />
     <title>Mission Control | ConvictionOS</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
     <script src="/config.js" defer></script>
     <script src="/dashboard.js" defer></script>
   </head>
-  <body class="dashboard-body">
+  <body class="app-body">
     <a class="skip-link" href="#dashboard-main">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="ConvictionOS home">
-        <span class="brand-mark" aria-hidden="true">C</span>
-        <span>ConvictionOS</span>
-      </a>
-      <nav aria-label="Dashboard navigation">
-        <a href="/">Landing</a>
-        <a href="#risk">Risk</a>
-        <a href="#receipts">Receipts</a>
-      </nav>
-    </header>
-
-    <main id="dashboard-main" class="dashboard-shell">
-      <section class="dashboard-hero">
-        <div>
-          <p class="eyebrow">Mission Control</p>
-          <h1>Operate the paper options agent with receipts, not guesswork.</h1>
-          <p>
-            This dashboard is safe for demos: it reads public readiness where
-            available and falls back to explicit unavailable states when the API is
-            not connected.
-          </p>
+    <div class="app-shell">
+      <aside class="app-sidebar" id="app-sidebar" aria-label="Application navigation">
+        <div class="sidebar-header">
+          <a class="brand app-brand" href="/" aria-label="ConvictionOS home">
+            <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.7 7.3a6.6 6.6 0 1 0 0 9.4" /><path d="M14.5 9.5a3.5 3.5 0 1 0 0 5" /></svg></span>
+            <span>ConvictionOS</span>
+          </a>
+          <button class="icon-button sidebar-close" id="nav-close" type="button" aria-label="Close navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" /></svg></button>
         </div>
-        <div class="control-card">
-          <span class="metric-label">Runtime state</span>
-          <strong id="runtime-state">Checking...</strong>
-          <p id="runtime-detail">Connecting to the configured ConvictionOS API.</p>
-          <p class="release-line">Release <span id="release-sha">unknown</span></p>
+
+        <div class="workspace-switcher" aria-label="Current workspace">
+          <span class="workspace-avatar">XC</span><span><strong>Primary workspace</strong><small>Individual · Paper</small></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4" /></svg>
         </div>
-      </section>
 
-      <section class="dashboard-grid" aria-label="Agent overview">
-        <article class="panel">
-          <span class="metric-label">Paper mode</span>
-          <strong id="paper-mode">Paper-only</strong>
-          <p id="paper-detail">No real-money execution path is exposed in this web app.</p>
-        </article>
-        <article class="panel">
-          <span class="metric-label">Primary underlying</span>
-          <strong id="underlying">SPY</strong>
-          <p id="strategy-detail">Options strategy routing is built around liquid index exposure.</p>
-        </article>
-        <article class="panel">
-          <span class="metric-label">AI authority</span>
-          <strong>Advisory</strong>
-          <p>AI can be vetoed by deterministic risk and broker-state checks.</p>
-        </article>
-        <article class="panel">
-          <span class="metric-label">24/7 worker</span>
-          <strong id="worker-state">Checking...</strong>
-          <p id="worker-detail">Reading the production runtime lease.</p>
-        </article>
-        <article class="panel">
-          <span class="metric-label">P&amp;L claim</span>
-          <strong>Unclaimed</strong>
-          <p>Paper execution is shown separately from return evidence.</p>
-        </article>
-      </section>
+        <nav class="app-nav" aria-label="Mission Control">
+          <p>Operate</p>
+          <a class="active" href="#overview"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9Zm0 7h6v-4H4v4Zm10 0h6v-9h-6v9Zm0-16v4h6V4h-6Z" /></svg><span>Overview</span></a>
+          <a href="#agent"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 9h8a4 4 0 0 1 4 4v5H4v-5a4 4 0 0 1 4-4Z" /><path d="M9 13h.01M15 13h.01M12 9V5m-2-2 2 2 2-2" /></svg><span>Agents</span><i id="nav-agent-dot"></i></a>
+          <a href="#portfolio"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16v11H4z" /><path d="M8 8V5h8v3m-4 4v3" /></svg><span>Portfolio</span></a>
+          <a href="#strategies"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 9 8l4 6 3-8 4 12" /></svg><span>Strategies</span></a>
+          <a href="#decisions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6z" /><path d="M9 8h6M9 12h6M9 16h4" /></svg><span>Decisions</span></a>
+          <a href="#risk"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z" /><path d="m9 12 2 2 4-4" /></svg><span>Risk controls</span></a>
+          <p>Develop</p>
+          <a href="#research"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3" /><path d="M8 15h8" /></svg><span>Research Lab</span></a>
+          <a href="#integrations"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8m-4-4v8" /><circle cx="12" cy="12" r="9" /></svg><span>Integrations</span></a>
+        </nav>
 
-      <section class="two-column">
-        <article class="panel">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">Mandates</p>
-              <h2>Strategy routing</h2>
+        <div class="sidebar-footer">
+          <div class="paper-lock"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 11V8a5 5 0 0 1 10 0v3M5 11h14v10H5z" /></svg><span><strong>Paper-only mode</strong><small>Real-money trading disabled</small></span></div>
+          <a href="/" class="back-link">Return to website <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></a>
+        </div>
+      </aside>
+      <button class="sidebar-overlay" id="sidebar-overlay" type="button" aria-label="Close navigation overlay"></button>
+
+      <div class="app-content">
+        <header class="app-topbar">
+          <div class="topbar-left">
+            <button class="icon-button nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="app-sidebar" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></button>
+            <div class="breadcrumb"><span>Mission Control</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg><strong>Overview</strong></div>
+          </div>
+          <div class="topbar-actions">
+            <span class="environment-badge"><span></span>Paper</span>
+            <a class="icon-button" href="https://github.com/maixuancanh/convictionos" aria-label="Open GitHub repository"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.87c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.35 1.09 2.92.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0 1 12 6.84a9.6 9.6 0 0 1 2.5.34c1.91-1.3 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.86V21c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" /></svg></a>
+            <span class="user-avatar" aria-label="Workspace owner">XC</span>
+          </div>
+        </header>
+
+        <main id="dashboard-main" class="dashboard-main">
+          <section id="overview" class="page-intro">
+            <div><p class="eyebrow">Mission Control</p><h1>Good morning, operator.</h1><p>Monitor the agent, inspect its reasoning, and keep paper risk within mandate.</p></div>
+            <div class="page-actions"><button class="button button-outline" id="refresh-status" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 5v6h-6" /></svg>Refresh status</button><a class="button button-dark" href="#decisions">View decisions</a></div>
+          </section>
+
+          <div class="notice-banner" id="status-notice" aria-live="polite"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20Z" /><path d="M12 11v6m0-10h.01" /></svg><div><strong id="notice-title">Connecting to production</strong><p id="notice-detail">Checking competition readiness and worker heartbeat.</p></div><span id="release-sha">unknown</span></div>
+
+          <section class="metric-cards" aria-label="Portfolio and agent summary">
+            <article><div class="metric-heading"><span>Agent state</span><span class="metric-icon sage"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 9h8a4 4 0 0 1 4 4v5H4v-5a4 4 0 0 1 4-4Z" /><path d="M12 9V5" /></svg></span></div><strong id="runtime-state">Checking</strong><p id="runtime-detail">Loading readiness</p><div class="metric-foot"><span class="tiny-dot"></span><span id="worker-inline">Worker status pending</span></div></article>
+            <article><div class="metric-heading"><span>Primary market</span><span class="metric-icon gold"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18 9 8l4 6 3-8 4 12" /></svg></span></div><strong id="underlying">SPY options</strong><p id="strategy-detail">Three independent horizons</p><div class="metric-foot"><span>Catalyst · Swing · Thematic</span></div></article>
+            <article><div class="metric-heading"><span>Risk authority</span><span class="metric-icon ink"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z" /></svg></span></div><strong>Deterministic</strong><p>AI remains advisory</p><div class="metric-foot"><span>5 hard gates before submission</span></div></article>
+            <article><div class="metric-heading"><span>Evidence status</span><span class="metric-icon neutral"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z" /><path d="M15 3v5h5M10 13h6" /></svg></span></div><strong>Unclaimed</strong><p>No P&amp;L edge asserted</p><div class="metric-foot"><span>Research separated from runtime</span></div></article>
+          </section>
+
+          <section class="dashboard-layout">
+            <div class="dashboard-primary">
+              <article id="agent" class="dashboard-panel agent-panel">
+                <div class="panel-title"><div><p class="eyebrow">Active agent</p><h2>SPY multi-horizon options</h2></div><span class="state-badge" id="agent-badge"><span></span>Checking</span></div>
+                <div class="agent-summary"><div><span>Next cycle</span><strong id="next-cycle">Awaiting runtime</strong></div><div><span>Execution</span><strong id="paper-mode">Paper only</strong></div><div><span>Broker</span><strong>Alpaca</strong></div><div><span>Model role</span><strong>Thesis advisory</strong></div></div>
+                <div class="pipeline"><div class="pipeline-head"><strong>Decision pipeline</strong><span>Fail-closed authority</span></div><ol><li class="complete"><span>1</span><div><strong>Market truth</strong><small>Point-in-time evidence</small></div></li><li class="complete"><span>2</span><div><strong>AI thesis</strong><small>Structured and bounded</small></div></li><li><span>3</span><div><strong>Quant agreement</strong><small>Signal confirmation</small></div></li><li><span>4</span><div><strong>Risk gates</strong><small>Exposure and liquidity</small></div></li><li><span>5</span><div><strong>Broker receipt</strong><small>Paper reconciliation</small></div></li></ol></div>
+              </article>
+
+              <article id="decisions" class="dashboard-panel decisions-panel">
+                <div class="panel-title"><div><p class="eyebrow">Audit trail</p><h2>Recent decisions</h2></div><button class="text-button" type="button" disabled>Export unavailable</button></div>
+                <div class="table-wrap"><table><thead><tr><th>Outcome</th><th>Mandate</th><th>Instrument</th><th>Reason</th><th>Receipt</th></tr></thead><tbody id="decision-table"><tr class="empty-row"><td colspan="5"><div class="empty-state"><span class="empty-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6z" /><path d="M9 8h6M9 12h6M9 16h4" /></svg></span><strong>No public decisions available</strong><p>Once production receipts are published, approved, denied, and abstained cycles will appear here.</p><a href="#agent">Review the decision pipeline</a></div></td></tr></tbody></table></div>
+              </article>
+
+              <article id="strategies" class="dashboard-panel mandate-panel">
+                <div class="panel-title"><div><p class="eyebrow">Portfolio construction</p><h2>Strategy mandates</h2></div><span class="soft-badge">3 horizons</span></div>
+                <div class="mandate-cards"><article><div class="mandate-top"><span class="mandate-icon catalyst">C</span><span class="state-badge ready"><span></span>Configured</span></div><h3>Catalyst</h3><p>Event-aware opportunities with tight evidence freshness and bounded duration.</p><dl><div><dt>Horizon</dt><dd>1–10 days</dd></div><div><dt>Risk budget</dt><dd>Independent</dd></div></dl></article><article><div class="mandate-top"><span class="mandate-icon swing">S</span><span class="state-badge ready"><span></span>Configured</span></div><h3>Swing</h3><p>Trend and volatility structures designed for medium-duration theses.</p><dl><div><dt>Horizon</dt><dd>2–8 weeks</dd></div><div><dt>Risk budget</dt><dd>Independent</dd></div></dl></article><article><div class="mandate-top"><span class="mandate-icon thematic">T</span><span class="state-badge ready"><span></span>Configured</span></div><h3>Thematic</h3><p>Slower structural theses with explicit review and invalidation cadence.</p><dl><div><dt>Horizon</dt><dd>3–12 months</dd></div><div><dt>Risk budget</dt><dd>Independent</dd></div></dl></article></div>
+              </article>
             </div>
-          </div>
-          <ul class="mandate-list">
-            <li>
-              <strong>Catalyst</strong>
-              <span>1-10 days, event-aware, tight risk budget.</span>
-            </li>
-            <li>
-              <strong>Swing</strong>
-              <span>2-8 weeks, trend and volatility structure.</span>
-            </li>
-            <li>
-              <strong>Thematic</strong>
-              <span>3-12 months, slower thesis with review cadence.</span>
-            </li>
-          </ul>
-        </article>
 
-        <article id="risk" class="panel">
-          <div class="panel-header">
-            <div>
-              <p class="eyebrow">Risk authority</p>
-              <h2>Hard gates</h2>
-            </div>
-          </div>
-          <div class="gate-stack">
-            <span>Quote freshness</span>
-            <span>Spread and liquidity</span>
-            <span>Buying power</span>
-            <span>Position exposure</span>
-            <span>Lifecycle exit policy</span>
-          </div>
-        </article>
-      </section>
-
-      <section id="receipts" class="panel receipt-panel">
-        <div>
-          <p class="eyebrow">Receipt verifier</p>
-          <h2>Every action should explain itself.</h2>
-          <p>
-            A valid receipt links evidence, model output, risk decision, Alpaca
-            acknowledgement, reconciliation, and lifecycle outcome.
-          </p>
-        </div>
-        <div class="receipt-preview" aria-label="Receipt preview">
-          <span>decision: abstain_or_submit</span>
-          <span>reason: evidence_bounded</span>
-          <span>risk: deterministic_gate</span>
-          <span>broker: paper_reconciled</span>
-        </div>
-      </section>
-    </main>
+            <aside class="dashboard-secondary">
+              <article id="portfolio" class="dashboard-panel compact-panel"><div class="panel-title"><div><p class="eyebrow">Portfolio</p><h2>Capital evidence</h2></div></div><div class="evidence-empty"><strong>No verified P&amp;L published</strong><p>Paper execution evidence and strategy performance remain separate until current metrics qualify.</p><span class="soft-badge">Truthful empty state</span></div></article>
+              <article id="risk" class="dashboard-panel compact-panel"><div class="panel-title"><div><p class="eyebrow">Risk controls</p><h2>Hard gates</h2></div><span class="shield-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z" /><path d="m9 12 2 2 4-4" /></svg></span></div><ul class="gate-list"><li><span><i></i>Quote freshness</span><strong>Required</strong></li><li><span><i></i>Spread &amp; liquidity</span><strong>Required</strong></li><li><span><i></i>Buying power</span><strong>Required</strong></li><li><span><i></i>Position exposure</span><strong>Required</strong></li><li><span><i></i>Lifecycle exit policy</span><strong>Required</strong></li></ul><p class="panel-note">Any failed or unknown gate becomes a denial or abstention.</p></article>
+              <article id="integrations" class="dashboard-panel compact-panel"><div class="panel-title"><div><p class="eyebrow">Integrations</p><h2>System health</h2></div></div><ul class="health-list"><li><span class="integration-logo alpaca">A</span><div><strong>Alpaca Paper</strong><small id="broker-health">Configuration checked by API</small></div><span class="health-state" id="broker-health-state">Checking</span></li><li><span class="integration-logo ai">AI</span><div><strong>Model gateway</strong><small>Provider-agnostic intelligence</small></div><span class="health-state">Backend only</span></li><li><span class="integration-logo worker">W</span><div><strong>Runtime worker</strong><small id="worker-detail">Reading production lease</small></div><span class="health-state" id="worker-state">Checking</span></li></ul></article>
+              <article id="research" class="dashboard-panel compact-panel research-card"><p class="eyebrow">Research Lab</p><h2>Promotion needs evidence.</h2><p>Strategies move from drafted to paper running only after explicit validation and backtest gates.</p><div class="stage-row"><span class="done">Drafted</span><span>Validated</span><span>Backtested</span></div></article>
+            </aside>
+          </section>
+        </main>
+      </div>
+    </div>
   </body>
 </html>

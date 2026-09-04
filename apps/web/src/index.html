@@ -3,141 +3,121 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="ConvictionOS is a paper-only autonomous options agent with deterministic risk authority."
-    />
-    <title>ConvictionOS | Paper options alpha you can audit</title>
+    <meta name="description" content="ConvictionOS turns grounded market evidence into deterministic, auditable Alpaca paper options decisions." />
+    <meta name="theme-color" content="#f5f1e7" />
+    <title>ConvictionOS | Evidence earns capital</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
+  <body class="marketing-body">
     <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="ConvictionOS home">
-        <span class="brand-mark" aria-hidden="true">C</span>
-        <span>ConvictionOS</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#proof">Proof</a>
-        <a href="#product">Product</a>
-        <a href="#risk">Risk</a>
-        <a class="nav-cta" href="/dashboard">Open Mission Control</a>
-      </nav>
+    <header class="marketing-header">
+      <div class="marketing-nav">
+        <a class="brand" href="/" aria-label="ConvictionOS home">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.7 7.3a6.6 6.6 0 1 0 0 9.4" /><path d="M14.5 9.5a3.5 3.5 0 1 0 0 5" /></svg></span>
+          <span>ConvictionOS</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#product">Product</a><a href="#solutions">Solutions</a><a href="#strategies">Strategies</a><a href="#trust">Security</a><a href="#methodology">Methodology</a>
+        </nav>
+        <div class="nav-actions">
+          <a class="text-link desktop-action" href="https://github.com/maixuancanh/convictionos">View source</a>
+          <a class="button button-dark nav-button" href="/dashboard">Open Mission Control</a>
+        </div>
+        <details class="mobile-menu">
+          <summary aria-label="Open navigation"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg></summary>
+          <nav aria-label="Mobile navigation">
+            <a href="#product">Product</a><a href="#solutions">Solutions</a><a href="#strategies">Strategies</a><a href="#trust">Security</a><a href="#methodology">Methodology</a><a href="/dashboard">Open Mission Control</a>
+          </nav>
+        </details>
+      </div>
     </header>
 
     <main id="main">
-      <section class="hero section-shell">
-        <div class="hero-copy">
-          <p class="eyebrow">Alpaca paper options agent</p>
-          <h1>AI can reason. Deterministic risk decides.</h1>
-          <p class="hero-lede">
-            ConvictionOS is a trust-first trading SaaS for autonomous paper
-            options: grounded AI analysis, hard risk gates, Alpaca
-            reconciliation, and decision receipts users can inspect.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="/dashboard">Open Mission Control</a>
-            <a class="button secondary" href="#proof">See evidence model</a>
-          </div>
-          <p class="fine-print">
-            Paper-only. No return promises. No real-money execution path in this
-            release.
-          </p>
+      <section class="marketing-hero">
+        <div class="hero-kicker">
+          <span class="status-pill status-paper"><span class="status-dot" aria-hidden="true"></span>Alpaca paper trading</span>
+          <span>Grounded AI · Deterministic execution</span>
         </div>
-        <aside class="hero-card" aria-label="ConvictionOS live readiness preview">
-          <div class="status-row">
-            <span class="status-dot good" aria-hidden="true"></span>
-            <span>Paper runtime ready</span>
-          </div>
-          <div class="metric-grid">
-            <div>
-              <span class="metric-label">Mandates</span>
-              <strong>3</strong>
-              <span>Catalyst, swing, thematic</span>
-            </div>
-            <div>
-              <span class="metric-label">Authority</span>
-              <strong>Risk</strong>
-              <span>AI cannot bypass gates</span>
-            </div>
-            <div>
-              <span class="metric-label">Broker</span>
-              <strong>Alpaca</strong>
-              <span>Paper API reconciliation</span>
-            </div>
-            <div>
-              <span class="metric-label">Proof</span>
-              <strong>Receipts</strong>
-              <span>Action and abstention trail</span>
-            </div>
-          </div>
-        </aside>
-      </section>
+        <h1>Evidence earns capital.</h1>
+        <p class="hero-lede">ConvictionOS is the operating system for accountable AI options trading—turning market evidence into bounded decisions, hard risk checks, and receipts you can verify.</p>
+        <div class="hero-actions">
+          <a class="button button-gold" href="/dashboard">Open Mission Control <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></a>
+          <a class="button button-ghost-dark" href="#product">Explore the product</a>
+        </div>
+        <p class="hero-note">Paper-only by design. No return promises. No real-money execution path.</p>
 
-      <section id="proof" class="section-shell proof-grid">
-        <div>
-          <p class="eyebrow">Why it is different</p>
-          <h2>Built for accountable automation, not black-box alpha theater.</h2>
-        </div>
-        <div class="feature-list">
-          <article>
-            <span class="feature-index">01</span>
-            <h3>Grounded AI</h3>
-            <p>
-              The model receives point-in-time evidence and must return bounded
-              reasoning. Invalid or stale output becomes abstention.
-            </p>
-          </article>
-          <article>
-            <span class="feature-index">02</span>
-            <h3>Deterministic execution</h3>
-            <p>
-              Position size, exposure, option structure, lifecycle, and account
-              state are validated before any paper order can move.
-            </p>
-          </article>
-          <article>
-            <span class="feature-index">03</span>
-            <h3>Receipts over vibes</h3>
-            <p>
-              Every decision explains what the agent knew, what it chose, which
-              gates passed, and what Alpaca state later confirmed.
-            </p>
-          </article>
+        <div class="product-window" aria-label="Preview of the ConvictionOS Mission Control dashboard">
+          <div class="window-sidebar" aria-hidden="true">
+            <div class="mini-brand"><span></span>ConvictionOS</div>
+            <div class="mini-nav active"><i></i>Overview</div><div class="mini-nav"><i></i>Agents</div><div class="mini-nav"><i></i>Portfolio</div><div class="mini-nav"><i></i>Strategies</div><div class="mini-nav"><i></i>Decisions</div><div class="mini-nav"><i></i>Risk</div>
+          </div>
+          <div class="window-main">
+            <div class="window-topbar"><div><small>Mission Control</small><strong>Good morning, operator.</strong></div><span class="status-pill status-quiet"><span class="status-dot"></span>Paper mode</span></div>
+            <div class="window-metrics">
+              <article><small>Agent status</small><strong>Evidence gated</strong><span>Awaiting next cycle</span></article>
+              <article><small>Primary market</small><strong>SPY options</strong><span>Multi-horizon mandates</span></article>
+              <article><small>Risk authority</small><strong>Deterministic</strong><span>Model cannot bypass</span></article>
+            </div>
+            <div class="window-grid">
+              <article class="window-feature"><div class="window-card-head"><span>Decision pipeline</span><b>5 gates</b></div><div class="pipeline-row"><i class="complete"></i><span>Evidence</span><em>Grounded</em></div><div class="pipeline-row"><i class="complete"></i><span>Thesis</span><em>Structured</em></div><div class="pipeline-row"><i></i><span>Risk</span><em>Evaluating</em></div><div class="pipeline-row"><i></i><span>Execution</span><em>Pending</em></div></article>
+              <article class="window-feature receipt-card"><small>Latest receipt</small><strong>ABSTAIN</strong><p>Quote freshness gate protected the paper account.</p><span>Evidence-bound decision</span></article>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section id="product" class="section-shell product-panel">
-        <div>
-          <p class="eyebrow">Commercial surface</p>
-          <h2>Looks like a SaaS because it behaves like one.</h2>
-          <p>
-            The landing page sells trust. Mission Control shows operations:
-            readiness, mandates, risk budget, broker sync, incidents, and public
-            claim evidence.
-          </p>
-        </div>
-        <div class="audience-cards">
-          <article>
-            <h3>For small investors</h3>
-            <p>Learn options automation safely with paper-only decisions and plain-language risk.</p>
-          </article>
-          <article>
-            <h3>For quant teams</h3>
-            <p>Review a provider-agnostic agent stack with deterministic controls and audit receipts.</p>
-          </article>
+      <section class="proof-strip" aria-label="Product principles">
+        <div><strong>Paper-only</strong><span>Alpaca execution boundary</span></div><div><strong>Provider-agnostic</strong><span>OpenRouter, Gemini, compatible gateways</span></div><div><strong>Fail-closed</strong><span>Uncertainty becomes abstention</span></div><div><strong>Auditable</strong><span>Decision and lifecycle receipts</span></div>
+      </section>
+
+      <section id="product" class="marketing-section process-section">
+        <div class="section-heading centered-heading"><p class="eyebrow">How ConvictionOS works</p><h2>From evidence to an auditable decision</h2><p>One controlled path separates model reasoning from trading authority.</p></div>
+        <div class="process-grid">
+          <article><span class="process-number">01</span><div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V9m6 10V5m6 14v-7m4 7H2" /></svg></div><h3>Ground the thesis</h3><p>Point-in-time market evidence, volatility context, and quant signals become a structured thesis—not a free-form order.</p></article>
+          <article><span class="process-number">02</span><div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z" /><path d="m9 12 2 2 4-4" /></svg></div><h3>Enforce the mandate</h3><p>Deterministic gates check liquidity, quote age, exposure, buying power, structure, and lifecycle policy.</p></article>
+          <article><span class="process-number">03</span><div class="icon-box"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h8l4 4v14H7z" /><path d="M15 3v5h5M10 13h6M10 17h6" /></svg></div><h3>Prove the outcome</h3><p>Submission, rejection, abstention, reconciliation, and exit events produce a clear decision receipt.</p></article>
         </div>
       </section>
 
-      <section id="risk" class="section-shell risk-band">
-        <p class="eyebrow">Safety contract</p>
-        <h2>No evidence, no trade. No reconciliation, no confidence.</h2>
-        <p>
-          ConvictionOS treats abstention as a first-class outcome. The strongest
-          demo is not a forced order; it is an agent that knows when not to act.
-        </p>
-        <a class="button primary" href="/dashboard">Open Mission Control</a>
+      <section id="solutions" class="marketing-section split-section">
+        <div class="section-heading"><p class="eyebrow">One platform, two perspectives</p><h2>Built for individual investors and quant teams</h2><p>Clear enough to understand at a glance. Deep enough to inspect every assumption.</p></div>
+        <div class="audience-grid">
+          <article class="audience-card dark-card"><span class="audience-label">Individual investors</span><h3>Stay in control without living in spreadsheets.</h3><ul><li>Plain-language decisions and abstentions</li><li>Visible maximum loss and mandate limits</li><li>Paper-first learning without hidden automation</li></ul></article>
+          <article class="audience-card light-card"><span class="audience-label">Quant &amp; portfolio teams</span><h3>Inspect the system behind every decision.</h3><ul><li>Evidence provenance and structured theses</li><li>Independent risk and broker reconciliation</li><li>Strategy promotion with measurable gates</li></ul></article>
+        </div>
       </section>
+
+      <section id="strategies" class="marketing-section lifecycle-section">
+        <div class="section-heading compact-heading"><p class="eyebrow">Strategy lifecycle</p><h2>Conviction is earned in stages.</h2><p>Research never becomes paper capital because a model sounded confident.</p></div>
+        <ol class="lifecycle-track">
+          <li><span>1</span><strong>Drafted</strong><p>Thesis, universe, horizon, and risk rules are explicit.</p></li><li><span>2</span><strong>Validated</strong><p>Inputs, calculations, and refusal behavior pass checks.</p></li><li><span>3</span><strong>Backtested</strong><p>Evidence is evaluated without rewriting history.</p></li><li><span>4</span><strong>Published</strong><p>A versioned mandate is approved for observation.</p></li><li><span>5</span><strong>Paper running</strong><p>Only eligible strategies receive bounded paper capital.</p></li>
+        </ol>
+      </section>
+
+      <section id="trust" class="trust-section">
+        <div class="trust-copy"><p class="eyebrow eyebrow-light">Safety is the product</p><h2>Paper capital.<br />Production discipline.</h2><p>ConvictionOS treats “do nothing” as a valid decision. If market truth, account state, or model output is incomplete, execution stops.</p><a class="button button-light" href="/dashboard#risk">Explore risk controls</a></div>
+        <div class="trust-list">
+          <article><span>01</span><div><h3>AI is advisory</h3><p>The model proposes a bounded thesis. It never owns position sizing or broker authority.</p></div></article><article><span>02</span><div><h3>Risk is deterministic</h3><p>Freshness, liquidity, exposure, mandate, and lifecycle checks are explicit and repeatable.</p></div></article><article><span>03</span><div><h3>Broker state wins</h3><p>Alpaca paper acknowledgements and reconciliation determine what actually happened.</p></div></article><article><span>04</span><div><h3>Receipts preserve context</h3><p>Decisions retain the evidence and gates needed for later review without exposing private credentials.</p></div></article>
+        </div>
+      </section>
+
+      <section id="methodology" class="marketing-section methodology-section">
+        <div class="methodology-card">
+          <div><p class="eyebrow">Evidence standards</p><h2>Performance without performance theater</h2><p>We separate system readiness, paper execution, and strategy evidence. A working agent is not automatically a proven edge—and the interface never pretends otherwise.</p></div>
+          <div class="methodology-grid"><article><span>System</span><strong>Can it operate safely?</strong><p>Runtime, data capability, broker connection, and refusal paths.</p></article><article><span>Execution</span><strong>What happened on paper?</strong><p>Orders, fills, lifecycle events, and reconciliation outcomes.</p></article><article><span>Research</span><strong>Has the strategy earned promotion?</strong><p>Versioned tests, costs, calibration, drawdown, and sample quality.</p></article></div>
+        </div>
+      </section>
+
+      <section class="final-cta"><p class="eyebrow">Ready to inspect the agent?</p><h2>See every decision.<br />Trust every boundary.</h2><p>Open the same Mission Control surface used to monitor ConvictionOS in paper mode.</p><a class="button button-gold" href="/dashboard">Open Mission Control <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg></a></section>
     </main>
+
+    <footer class="marketing-footer">
+      <a class="brand footer-brand" href="/" aria-label="ConvictionOS home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16.7 7.3a6.6 6.6 0 1 0 0 9.4" /><path d="M14.5 9.5a3.5 3.5 0 1 0 0 5" /></svg></span><span>ConvictionOS</span></a>
+      <p>Accountable AI options trading on Alpaca paper.</p><div><a href="https://github.com/maixuancanh/convictionos">GitHub</a><a href="/dashboard">Mission Control</a></div>
+    </footer>
   </body>
 </html>
