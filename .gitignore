@@ -1,0 +1,13 @@
+.worktrees/
+.venv/
+node_modules/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+*.pyc
+dist/
+build/
+artifacts/
+*.egg-info/

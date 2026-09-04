@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mission Control | ConvictionOS</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/config.js" defer></script>
+    <script src="/dashboard.js" defer></script>
+  </head>
+  <body class="dashboard-body">
+    <a class="skip-link" href="#dashboard-main">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="ConvictionOS home">
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span>ConvictionOS</span>
+      </a>
+      <nav aria-label="Dashboard navigation">
+        <a href="/">Landing</a>
+        <a href="#risk">Risk</a>
+        <a href="#receipts">Receipts</a>
+      </nav>
+    </header>
+
+    <main id="dashboard-main" class="dashboard-shell">
+      <section class="dashboard-hero">
+        <div>
+          <p class="eyebrow">Mission Control</p>
+          <h1>Operate the paper options agent with receipts, not guesswork.</h1>
+          <p>
+            This dashboard is safe for demos: it reads public readiness where
+            available and falls back to explicit unavailable states when the API is
+            not connected.
+          </p>
+        </div>
+        <div class="control-card">
+          <span class="metric-label">Runtime state</span>
+          <strong id="runtime-state">Checking...</strong>
+          <p id="runtime-detail">Connecting to the configured ConvictionOS API.</p>
+          <p class="release-line">Release <span id="release-sha">unknown</span></p>
+        </div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="Agent overview">
+        <article class="panel">
+          <span class="metric-label">Paper mode</span>
+          <strong id="paper-mode">Paper-only</strong>
+          <p id="paper-detail">No real-money execution path is exposed in this web app.</p>
+        </article>
+        <article class="panel">
+          <span class="metric-label">Primary underlying</span>
+          <strong id="underlying">SPY</strong>
+          <p id="strategy-detail">Options strategy routing is built around liquid index exposure.</p>
+        </article>
+        <article class="panel">
+          <span class="metric-label">AI authority</span>
+          <strong>Advisory</strong>
+          <p>AI can be vetoed by deterministic risk and broker-state checks.</p>
+        </article>
+        <article class="panel">
+          <span class="metric-label">24/7 worker</span>
+          <strong id="worker-state">Checking...</strong>
+          <p id="worker-detail">Reading the production runtime lease.</p>
+        </article>
+        <article class="panel">
+          <span class="metric-label">P&amp;L claim</span>
+          <strong>Unclaimed</strong>
+          <p>Paper execution is shown separately from return evidence.</p>
+        </article>
+      </section>
+
+      <section class="two-column">
+        <article class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Mandates</p>
+              <h2>Strategy routing</h2>
+            </div>
+          </div>
+          <ul class="mandate-list">
+            <li>
+              <strong>Catalyst</strong>
+              <span>1-10 days, event-aware, tight risk budget.</span>
+            </li>
+            <li>
+              <strong>Swing</strong>
+              <span>2-8 weeks, trend and volatility structure.</span>
+            </li>
+            <li>
+              <strong>Thematic</strong>
+              <span>3-12 months, slower thesis with review cadence.</span>
+            </li>
+          </ul>
+        </article>
+
+        <article id="risk" class="panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Risk authority</p>
+              <h2>Hard gates</h2>
+            </div>
+          </div>
+          <div class="gate-stack">
+            <span>Quote freshness</span>
+            <span>Spread and liquidity</span>
+            <span>Buying power</span>
+            <span>Position exposure</span>
+            <span>Lifecycle exit policy</span>
+          </div>
+        </article>
+      </section>
+
+      <section id="receipts" class="panel receipt-panel">
+        <div>
+          <p class="eyebrow">Receipt verifier</p>
+          <h2>Every action should explain itself.</h2>
+          <p>
+            A valid receipt links evidence, model output, risk decision, Alpaca
+            acknowledgement, reconciliation, and lifecycle outcome.
+          </p>
+        </div>
+        <div class="receipt-preview" aria-label="Receipt preview">
+          <span>decision: abstain_or_submit</span>
+          <span>reason: evidence_bounded</span>
+          <span>risk: deterministic_gate</span>
+          <span>broker: paper_reconciled</span>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,168 @@
+{
+  "release_sha": "unknown",
+  "event_requirements": {
+    "source_url": "https://lablab.ai/ai-hackathons/alpaca-ai-trading-agents-hackathon",
+    "source_checked_at": "2026-09-04T00:00:00+07:00",
+    "date_window": "28 August-4 September 2026",
+    "public_prompt": "Build AI trading agents on Alpaca using Trading API, MCP server and CLI.",
+    "paper_account_starting_balance": "$100,000",
+    "requires_options_trading": true,
+    "requires_one_page_writeup": true,
+    "form_fields_verified": false,
+    "form_verification_note": "Authenticated Lablab submission form fields, upload limits, media types, cutoff time, edit-after-submit behavior, and private Alpaca account-ID handling must be verified immediately before final submit."
+  },
+  "claims": [
+    {
+      "category": "agent",
+      "text": "ConvictionOS is a paper-only autonomous options trading agent that separates AI judgment from deterministic execution authority.",
+      "status": "verified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Reverify on every release SHA or policy change.",
+      "evidence": [
+        {
+          "type": "test",
+          "locator": "uv run pytest -q",
+          "status": "verified"
+        },
+        {
+          "type": "code",
+          "locator": "src/convictionos/application/agent.py",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "alpaca",
+      "text": "The production design uses Alpaca paper trading only and keeps broker credentials server-side.",
+      "status": "qualified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Reverify after credential rotation and deployed environment changes.",
+      "evidence": [
+        {
+          "type": "configuration",
+          "locator": ".env.example",
+          "status": "verified"
+        },
+        {
+          "type": "operations",
+          "locator": "docs/operations/live-paper-acceptance.md",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "options_strategy",
+      "text": "ConvictionOS routes decisions through a multi-horizon options strategy layer with catalyst, swing, and thematic mandates.",
+      "status": "verified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Reverify after strategy-router or risk-policy changes.",
+      "evidence": [
+        {
+          "type": "test",
+          "locator": "tests/application/test_strategy_router.py",
+          "status": "verified"
+        },
+        {
+          "type": "documentation",
+          "locator": "README.md#strategy-model",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "risk",
+      "text": "Every order candidate passes deterministic risk gates before paper execution; uncertainty produces abstention rather than forced trades.",
+      "status": "verified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Reverify on every risk-policy change.",
+      "evidence": [
+        {
+          "type": "test",
+          "locator": "tests/application/test_portfolio_risk.py",
+          "status": "verified"
+        },
+        {
+          "type": "test",
+          "locator": "tests/domain/test_trade_intent.py",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "operations",
+      "text": "The runtime separates API, worker, and migration roles and uses durable scheduler leases, heartbeats, controls, incidents, and release-aware readiness.",
+      "status": "verified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Reverify on every deployment topology change.",
+      "evidence": [
+        {
+          "type": "test",
+          "locator": "tests/test_process_roles.py",
+          "status": "verified"
+        },
+        {
+          "type": "test",
+          "locator": "tests/infrastructure/test_runtime_store.py",
+          "status": "verified"
+        },
+        {
+          "type": "test",
+          "locator": "tests/api/test_health_api.py",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "proof",
+      "text": "Decision receipts and public readiness endpoints are designed to show what the agent knew, why it acted or abstained, and which safety gates controlled execution.",
+      "status": "verified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Reverify after receipt schema, public API, or dashboard changes.",
+      "evidence": [
+        {
+          "type": "test",
+          "locator": "tests/domain/test_receipts.py",
+          "status": "verified"
+        },
+        {
+          "type": "test",
+          "locator": "tests/api/test_strategy_readiness.py",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "pnl",
+      "text": "ConvictionOS does not claim a proven P&L edge yet; live paper outcomes remain evidence to be collected and reported truthfully.",
+      "status": "qualified",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Update after each accepted paper lifecycle report.",
+      "evidence": [
+        {
+          "type": "operations",
+          "locator": "docs/operations/live-paper-acceptance.md",
+          "status": "verified"
+        },
+        {
+          "type": "script",
+          "locator": "scripts/live_paper_acceptance.py",
+          "status": "verified"
+        }
+      ]
+    },
+    {
+      "category": "submission",
+      "text": "Public repository URL, hosted app URL, video URL, deck URL, social URL, and private competition account confirmation are unavailable until final authenticated submission.",
+      "status": "unavailable",
+      "owner": "ConvictionOS",
+      "staleness_rule": "Must be replaced with verified locators before final public submission.",
+      "evidence": [
+        {
+          "type": "checklist",
+          "locator": "docs/security/public-release-checklist.md",
+          "status": "qualified"
+        }
+      ]
+    }
+  ]
+}

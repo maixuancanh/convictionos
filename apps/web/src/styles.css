@@ -1,0 +1,361 @@
+:root {
+  color-scheme: light;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-muted: #eef6ff;
+  --text: #0f172a;
+  --muted: #475569;
+  --line: #cbd5e1;
+  --accent: #0369a1;
+  --accent-strong: #075985;
+  --good: #047857;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+}
+
+.skip-link {
+  left: 1rem;
+  position: fixed;
+  top: -10rem;
+  z-index: 30;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.site-header {
+  align-items: center;
+  background: rgba(248, 250, 252, 0.96);
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem max(1rem, env(safe-area-inset-left)) 1rem max(1rem, env(safe-area-inset-right));
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.brand,
+.site-header nav,
+.hero-actions,
+.status-row,
+.panel-header {
+  align-items: center;
+  display: flex;
+}
+
+.brand {
+  font-weight: 800;
+  gap: 0.7rem;
+  text-decoration: none;
+}
+
+.brand-mark {
+  align-items: center;
+  background: var(--text);
+  border-radius: 0.9rem;
+  color: white;
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  min-height: 2.5rem;
+  min-width: 2.5rem;
+}
+
+.site-header nav {
+  gap: 1rem;
+}
+
+.site-header nav a {
+  color: var(--muted);
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.nav-cta,
+.button {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  min-height: 2.75rem;
+  padding: 0.75rem 1rem;
+}
+
+.nav-cta {
+  color: var(--accent-strong) !important;
+}
+
+.section-shell,
+.dashboard-shell {
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 5rem 1.25rem;
+}
+
+.hero,
+.proof-grid,
+.product-panel,
+.dashboard-hero,
+.two-column,
+.receipt-panel {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+}
+
+.hero h1,
+.dashboard-hero h1 {
+  font-size: clamp(3rem, 8vw, 5.8rem);
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  margin: 0;
+  text-wrap: balance;
+}
+
+h3,
+p {
+  margin-top: 0;
+}
+
+p {
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+.eyebrow,
+.metric-label,
+.feature-index {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-lede {
+  font-size: 1.2rem;
+  max-width: 45rem;
+}
+
+.hero-actions {
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 2rem 0 1rem;
+}
+
+.button {
+  display: inline-flex;
+  font-weight: 800;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button.primary {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: white;
+}
+
+.button.secondary {
+  background: var(--surface);
+  color: var(--accent-strong);
+}
+
+.fine-print {
+  font-size: 0.92rem;
+}
+
+.release-line {
+  color: var(--muted);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.82rem;
+  margin-bottom: 0;
+}
+
+.hero-card,
+.panel,
+.control-card,
+.product-panel,
+.risk-band {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.hero-card,
+.panel,
+.control-card,
+.risk-band,
+.product-panel {
+  padding: 1.5rem;
+}
+
+.status-row {
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.status-dot {
+  border-radius: 999px;
+  display: inline-block;
+  min-height: 0.7rem;
+  min-width: 0.7rem;
+}
+
+.status-dot.good {
+  background: var(--good);
+}
+
+.metric-grid,
+.feature-list,
+.audience-cards,
+.dashboard-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric-grid div,
+.feature-list article,
+.audience-cards article {
+  background: var(--surface-muted);
+  border: 1px solid #bfdbfe;
+  border-radius: 1.3rem;
+  padding: 1rem;
+}
+
+.metric-grid strong,
+.dashboard-grid strong,
+.control-card strong {
+  display: block;
+  font-size: 1.8rem;
+  letter-spacing: -0.03em;
+}
+
+.metric-grid span,
+.dashboard-grid p,
+.control-card p {
+  font-size: 0.92rem;
+}
+
+.proof-grid {
+  align-items: start;
+}
+
+.feature-list article + article {
+  margin-top: 1rem;
+}
+
+.product-panel,
+.risk-band {
+  margin-top: 2rem;
+}
+
+.audience-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.risk-band {
+  max-width: 860px;
+}
+
+.dashboard-body {
+  background: #f1f5f9;
+}
+
+.dashboard-shell {
+  padding-top: 3rem;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 2rem;
+}
+
+.two-column {
+  margin-bottom: 2rem;
+}
+
+.mandate-list,
+.gate-stack {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mandate-list li,
+.gate-stack span,
+.receipt-preview span {
+  background: var(--surface-muted);
+  border: 1px solid #bfdbfe;
+  border-radius: 1rem;
+  display: grid;
+  padding: 0.9rem 1rem;
+}
+
+.receipt-preview {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.receipt-preview span {
+  color: var(--accent-strong);
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 860px) {
+  .site-header,
+  .site-header nav {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hero,
+  .proof-grid,
+  .product-panel,
+  .dashboard-hero,
+  .two-column,
+  .receipt-panel,
+  .dashboard-grid,
+  .audience-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .section-shell,
+  .dashboard-shell {
+    padding: 3rem 1rem;
+  }
+}

@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: convictionos
+      POSTGRES_USER: convictionos
+      POSTGRES_PASSWORD: convictionos
+    ports:
+      - "54329:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U convictionos -d convictionos"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  test-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: convictionos_test
+      POSTGRES_USER: convictionos
+      POSTGRES_PASSWORD: convictionos
+    ports:
+      - "54330:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U convictionos -d convictionos_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 5

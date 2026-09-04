@@ -1,0 +1,12 @@
+{
+  "name": "convictionos-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "lint": "node scripts/check-web.mjs",
+    "typecheck": "node scripts/check-web.mjs",
+    "test": "node scripts/check-web.mjs"
+  }
+}

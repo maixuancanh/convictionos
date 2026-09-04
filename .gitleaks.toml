@@ -1,0 +1,10 @@
+title = "ConvictionOS gitleaks policy"
+
+[allowlist]
+description = "Known test-only placeholders"
+regexes = [
+  '''control-secret''',
+  '''openrouter-secret''',
+  '''alpaca-secret''',
+  '''webhook-secret''',
+]
