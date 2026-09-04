@@ -56,8 +56,19 @@ for (const required of [
 
 assert.match(dashboard, /aria-label="Open navigation"/);
 assert.match(dashboard, /aria-live="polite"/);
+assert.match(dashboard, /id="run-agent-now"/);
+assert.match(dashboard, /id="control-token"[^>]*type="password"[^>]*autocomplete="off"/);
+assert.match(dashboard, /id="action-feedback"[^>]*aria-live="polite"/);
+assert.match(dashboard, /id="position-summary"/);
+assert.match(dashboard, /id="position-list"/);
 assert.match(dashboardScript, /competition-readiness/);
 assert.match(dashboardScript, /runtime\/status/);
+assert.match(dashboardScript, /\/v1\/control-plane/);
+assert.match(dashboardScript, /\/v1\/positions/);
+assert.match(dashboardScript, /\/v1\/agent\/status/);
+assert.match(dashboardScript, /\/v1\/agent\/scheduler\/run-now/);
+assert.match(dashboardScript, /X-Agent-Control-Token/);
+assert.doesNotMatch(dashboardScript, /localStorage|sessionStorage/);
 assert.match(landing, /href="\/mission-control(?:#risk)?"/);
 assert.doesNotMatch(landing, /href="\/dashboard(?:#risk)?"/);
 assert.deepEqual(vercel.rewrites, [

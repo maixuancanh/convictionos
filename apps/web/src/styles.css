@@ -332,6 +332,29 @@ td { font-size: .68rem; padding: .65rem; }
 .stage-row { display: flex; gap: .3rem; }
 .stage-row span { border: 1px solid var(--line-dark); color: #81877f; font-size: .54rem; padding: .35rem .45rem; }
 .stage-row span.done { background: rgba(216, 169, 40, .14); border-color: rgba(216, 169, 40, .35); color: #e8c868; }
+.position-list { display: grid; gap: .55rem; }
+.position-item { align-items: center; border-top: 1px solid var(--line); display: flex; justify-content: space-between; padding: .7rem 0; }
+.position-item div { display: grid; gap: .2rem; }
+.position-item strong { font-size: .68rem; }
+.position-item small { color: var(--muted); font-size: .58rem; }
+.decision-outcome { font-weight: 700; }
+.decision-outcome.approved, .decision-outcome.submitted { color: #49634e; }
+.decision-outcome.denied, .decision-outcome.abstained { color: var(--danger); }
+.compact-empty { min-height: 135px; }
+.control-dialog { background: var(--surface); border: 1px solid var(--line); box-shadow: 0 24px 80px rgba(13, 16, 13, .24); color: var(--ink); max-width: min(520px, calc(100vw - 2rem)); padding: 0; width: 100%; }
+.control-dialog::backdrop { background: rgba(10, 12, 10, .62); backdrop-filter: blur(3px); }
+.control-dialog form { display: grid; gap: 1rem; padding: 1.35rem; }
+.dialog-heading { align-items: flex-start; display: flex; justify-content: space-between; }
+.dialog-heading h2 { font-size: 1.2rem; }
+.dialog-copy { color: var(--muted); font-size: .76rem; line-height: 1.55; }
+.control-dialog label { font-size: .68rem; font-weight: 700; }
+.control-dialog input { background: var(--canvas); border: 1px solid var(--line); color: var(--ink); font: inherit; min-height: 46px; padding: .7rem .8rem; width: 100%; }
+.control-dialog input:focus { border-color: var(--gold-dark); outline: 2px solid rgba(170, 127, 23, .18); }
+.action-feedback { background: var(--surface-warm); border-left: 3px solid var(--gold); color: var(--muted); font-size: .68rem; line-height: 1.45; padding: .7rem .8rem; }
+.action-feedback.working { color: var(--ink); }
+.action-feedback.success { background: var(--sage-light); border-color: var(--sage); color: #405745; }
+.action-feedback.error { background: #f7e5e1; border-color: var(--danger); color: var(--danger); }
+.dialog-actions { display: flex; gap: .65rem; justify-content: flex-end; }
 
 @media (max-width: 1100px) {
   .desktop-nav { display: none; }
